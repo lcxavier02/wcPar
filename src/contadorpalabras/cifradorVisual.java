@@ -38,10 +38,12 @@ public class cifradorVisual extends javax.swing.JFrame {
         btnIniciarPorRMI = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 9));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         jLabel1.setText("Contador de palabras");
 
+        chkConcurrente.setForeground(new java.awt.Color(0, 0, 0));
         chkConcurrente.setText("Concurrente");
         chkConcurrente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         chkConcurrente.addActionListener(new java.awt.event.ActionListener() {
@@ -70,6 +72,7 @@ public class cifradorVisual extends javax.swing.JFrame {
         jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jComboBox1.setEnabled(false);
 
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Cantidad de hilos (Concurrente)");
 
         cmbEscogerTexto.setBackground(new java.awt.Color(0, 0, 0));
@@ -78,10 +81,13 @@ public class cifradorVisual extends javax.swing.JFrame {
         cmbEscogerTexto.setBorder(null);
         cmbEscogerTexto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Escoge el texto a cifrar");
 
         txtLogs.setEditable(false);
+        txtLogs.setBackground(new java.awt.Color(0, 0, 0));
         txtLogs.setColumns(20);
+        txtLogs.setForeground(new java.awt.Color(255, 255, 255));
         txtLogs.setRows(5);
         txtLogs.setText("Logs:");
         jScrollPane1.setViewportView(txtLogs);
@@ -169,9 +175,9 @@ public class cifradorVisual extends javax.swing.JFrame {
                         .addComponent(cmbEscogerTexto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(25, 25, 25)
                         .addComponent(chkConcurrente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)
                         .addGap(18, 18, 18)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnIniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
