@@ -12,20 +12,20 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JTextArea;
 
-public class cifradoHill {
+public class Contadores {
     String key = "hill";
 
     ArrayList<String> palabrasSec=new ArrayList<String>();
     ArrayList<String> palabrasCon=new ArrayList<String>();
-    CifradorTexto cifrador = new CifradorTexto(palabrasSec, palabrasCon);
+    ContadorTexto cifrador = new ContadorTexto(palabrasSec, palabrasCon);
     ContadorDePalabras contadorPalabras=new ContadorDePalabras();
-    String nombreArchivo = "C:/Users/Xavi/Documents/NetBeansProjects/ContadorPalabras/src/contadorpalabras/";
+    String nombreArchivo = "C:/Users/xvelazquez/Documents/NetBeansProjects/wcPar/src/texts/";
     ContadorDePalabrasHilos contadorHilos=new ContadorDePalabrasHilos();
     int numCifrado=10000;
     
     int numHilos = 8;
     
-    CifradoRMIServidor server;
+    ContadorRMIServidor server;
     
     public void contarPalabrasSecuencial(JTextArea log) throws IOException{
         long tiempoInicioSecuencial = System.currentTimeMillis();
@@ -57,7 +57,7 @@ public class cifradoHill {
     }
 }
   
- public void contarPalabrasParalelo(CifradoRMIServidor server, JTextArea log) throws IOException {
+ public void contarPalabrasParalelo(ContadorRMIServidor server, JTextArea log) throws IOException {
     int totPalabras = contadorPalabras.contarPalabras(nombreArchivo, palabrasSec);
     System.out.println("palabrasSec: " + palabrasSec);
     String[] texto = new String[palabrasSec.size()];
@@ -104,7 +104,7 @@ public class cifradoHill {
             long tiempoTotalConHilos = tiempoFinConHilos - tiempoInicioConHilos;
             log.append("\nTiempo de ejecución (con hilos): " + tiempoTotalConHilos + " ms");
         } catch (InterruptedException ex) {
-            Logger.getLogger(cifradoHill.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Contadores.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

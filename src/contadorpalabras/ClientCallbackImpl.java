@@ -15,8 +15,8 @@ public class ClientCallbackImpl extends UnicastRemoteObject implements ClientCal
     }
 
     @Override
-    public void receiveMessage(String[] message, CifradoRMI servidor, int identifier) throws RemoteException {
-        cifradoHill cifrador=new cifradoHill();
+    public void receiveMessage(String[] message, ContadorRMI servidor, int identifier) throws RemoteException {
+        Contadores cifrador=new Contadores();
         System.out.println("Texto recibido: " + Arrays.toString(message));
         try {
             String[] textoCifrado=cifrador.cifrarConHilosClientesFinal(message, message.length);

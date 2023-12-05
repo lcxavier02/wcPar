@@ -10,15 +10,15 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JTextArea;
 
-public class CifradoRMIServidor extends UnicastRemoteObject implements CifradoRMI {
+public class ContadorRMIServidor extends UnicastRemoteObject implements ContadorRMI {
     public Map<Integer, String[]> resultadosClientes = new HashMap<>();
     public Map<Integer, ClientCallback> clientes;
-    private cifradoHill hill;
+    private Contadores hill;
     private int contadorClientes;
 
-    public CifradoRMIServidor() throws RemoteException {
+    public ContadorRMIServidor() throws RemoteException {
         clientes = new HashMap<>();
-        hill = new cifradoHill();
+        hill = new Contadores();
         contadorClientes = 0;
     }
 
@@ -50,11 +50,11 @@ public class CifradoRMIServidor extends UnicastRemoteObject implements CifradoRM
         log.append("\nTiempo de ejecución (RMI): " + tiempoTotalConHilos + " ms\n");
     }
     
-    public CifradoRMI connect(String Ip, CifradoRMIServidor server, JTextArea log) {
+    public ContadorRMI connect(String Ip, ContadorRMIServidor server, JTextArea log) {
         try {
             LocateRegistry.createRegistry(9000);
 
-            CifradoRMI service = server;
+            ContadorRMI service = server;
 
 
             java.rmi.Naming.rebind("rmi://" + Ip + ":9000/CifradoRMI", service);
@@ -77,7 +77,6 @@ public class CifradoRMIServidor extends UnicastRemoteObject implements CifradoRM
         System.out.println("Clientes registrados: " + Arrays.toString(clientes.keySet().toArray()));
 
         System.out.println("Cliente registrado: " + cliente.toString() + " - ID: " + contadorClientes);
-
     }
         
     @Override

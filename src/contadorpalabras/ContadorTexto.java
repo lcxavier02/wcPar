@@ -2,12 +2,12 @@ package contadorpalabras;
 
 import java.util.ArrayList;
 
-public class CifradorTexto {
+public class ContadorTexto {
 
         private ArrayList<String> palabrasSec=new ArrayList<String>();
         private ArrayList<String> palabrasCon=new ArrayList<String>();
 
-    public CifradorTexto(ArrayList<String> palabrasSec, ArrayList<String> palabrasCon) {
+    public ContadorTexto(ArrayList<String> palabrasSec, ArrayList<String> palabrasCon) {
         this.palabrasCon=palabrasCon;
         this.palabrasSec=palabrasSec;
     }
