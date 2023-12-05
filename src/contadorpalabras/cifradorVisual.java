@@ -1,4 +1,4 @@
-package cifradortexto;
+package contadorpalabras;
 
 import java.io.File;
 import java.io.IOException;

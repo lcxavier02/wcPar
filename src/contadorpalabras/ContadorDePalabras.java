@@ -1,5 +1,5 @@
 
-package cifradortexto;
+package contadorpalabras;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

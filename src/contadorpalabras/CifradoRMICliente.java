@@ -1,4 +1,4 @@
-package cifradortexto;
+package contadorpalabras;
 
 import java.rmi.Naming;
 
