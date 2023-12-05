@@ -25,16 +25,12 @@ public class cifradorVisual extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        cmbCodigos = new javax.swing.JComboBox<>();
-        jLabel2 = new javax.swing.JLabel();
         chkConcurrente = new javax.swing.JCheckBox();
         btnIniciar = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         cmbEscogerTexto = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
-        txtCantidad = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtLogs = new javax.swing.JTextArea();
         btnServer = new javax.swing.JButton();
@@ -44,59 +40,88 @@ public class cifradorVisual extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        jLabel1.setText("Cifrador de Texto");
-
-        cmbCodigos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "hill", "lion", "test", "dfhc", "lkop" }));
-
-        jLabel2.setText("Escoge tu clave de cifrado:");
+        jLabel1.setText("Contador de palabras");
 
         chkConcurrente.setText("Concurrente");
+        chkConcurrente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         chkConcurrente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkConcurrenteActionPerformed(evt);
             }
         });
 
+        btnIniciar.setBackground(new java.awt.Color(0, 0, 0));
+        btnIniciar.setForeground(new java.awt.Color(255, 255, 255));
         btnIniciar.setText("Iniciar");
+        btnIniciar.setBorder(null);
+        btnIniciar.setBorderPainted(false);
+        btnIniciar.setContentAreaFilled(false);
+        btnIniciar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnIniciar.setOpaque(true);
         btnIniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIniciarActionPerformed(evt);
             }
         });
 
+        jComboBox1.setBackground(new java.awt.Color(0, 0, 0));
+        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2", "4", "6", "8" }));
+        jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jComboBox1.setEnabled(false);
 
         jLabel3.setText("Cantidad de hilos (Concurrente)");
 
-        cmbEscogerTexto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lorem", "Shrek" }));
+        cmbEscogerTexto.setBackground(new java.awt.Color(0, 0, 0));
+        cmbEscogerTexto.setForeground(new java.awt.Color(255, 255, 255));
+        cmbEscogerTexto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "100", "1000", "10000", "100000", "1000000", "2000000" }));
+        cmbEscogerTexto.setBorder(null);
+        cmbEscogerTexto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel4.setText("Escoge el texto a cifrar");
 
-        txtCantidad.setText("10000");
-
-        jLabel5.setText("Cantidad de veces a cifrar:");
-
+        txtLogs.setEditable(false);
         txtLogs.setColumns(20);
         txtLogs.setRows(5);
         txtLogs.setText("Logs:");
         jScrollPane1.setViewportView(txtLogs);
 
+        btnServer.setBackground(new java.awt.Color(0, 0, 0));
+        btnServer.setForeground(new java.awt.Color(255, 255, 255));
         btnServer.setText("Server");
+        btnServer.setBorder(null);
+        btnServer.setBorderPainted(false);
+        btnServer.setContentAreaFilled(false);
+        btnServer.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnServer.setOpaque(true);
         btnServer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnServerActionPerformed(evt);
             }
         });
 
+        btnClient.setBackground(new java.awt.Color(0, 0, 0));
+        btnClient.setForeground(new java.awt.Color(255, 255, 255));
         btnClient.setText("Client");
+        btnClient.setBorder(null);
+        btnClient.setBorderPainted(false);
+        btnClient.setContentAreaFilled(false);
+        btnClient.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnClient.setOpaque(true);
         btnClient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClientActionPerformed(evt);
             }
         });
 
-        btnIniciarPorRMI.setText("Iniciar por Cliente servidor");
+        btnIniciarPorRMI.setBackground(new java.awt.Color(0, 0, 0));
+        btnIniciarPorRMI.setForeground(new java.awt.Color(255, 255, 255));
+        btnIniciarPorRMI.setText("Iniciar por RMI");
+        btnIniciarPorRMI.setBorder(null);
+        btnIniciarPorRMI.setBorderPainted(false);
+        btnIniciarPorRMI.setContentAreaFilled(false);
+        btnIniciarPorRMI.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnIniciarPorRMI.setOpaque(true);
         btnIniciarPorRMI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIniciarPorRMIActionPerformed(evt);
@@ -108,77 +133,56 @@ public class cifradorVisual extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(35, 35, 35)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cmbCodigos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnClient, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnServer, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel3)
                             .addComponent(chkConcurrente, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cmbEscogerTexto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnIniciar)
-                                .addGap(47, 47, 47))))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(cmbEscogerTexto, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnIniciarPorRMI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnIniciar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(btnIniciarPorRMI))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnClient)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnServer, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(125, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(145, 145, 145))
+                        .addGap(106, 106, 106)
+                        .addComponent(jLabel1)))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addGap(24, 24, 24)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(68, 68, 68)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cmbCodigos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(chkConcurrente)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cmbEscogerTexto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                        .addComponent(txtCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25)
+                        .addComponent(chkConcurrente)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnIniciar)
-                        .addGap(36, 36, 36)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnServer)
-                            .addComponent(btnClient))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnIniciarPorRMI)
-                .addContainerGap(34, Short.MAX_VALUE))
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnIniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnServer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnClient, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnIniciarPorRMI, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
 
         pack();
@@ -186,59 +190,26 @@ public class cifradorVisual extends javax.swing.JFrame {
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
         cifradoHill cifradoHill=new cifradoHill();
-        if(esNumeroEntero(txtCantidad.getText().toString())){
-            borrarCrearResultado();
-            
-            
-        String codigos=cmbCodigos.getSelectedItem().toString();
         int cantidadHilos=Integer.parseInt(jComboBox1.getSelectedItem().toString());
         String textoCifrar=cmbEscogerTexto.getSelectedItem().toString();
         
-        int cantidadCifrar=Integer.parseInt(txtCantidad.getText().toString());
-        
-        cifradoHill.key=codigos;
         cifradoHill.numHilos=cantidadHilos;
-        cifradoHill.nombreArchivo=cifradoHill.nombreArchivo+textoCifrar+".txt";
-        cifradoHill.numCifrado=cantidadCifrar;
+        cifradoHill.nombreArchivo=cifradoHill.nombreArchivo+textoCifrar+"w.txt";
         
         if(!chkConcurrente.isSelected()){
             try {
-                long tiempoInicioSecuencial = System.currentTimeMillis();
-                cifradoHill.cifrarSecuencial();
-                long tiempoFinSecuencial = System.currentTimeMillis();
-                long tiempoTotalSecuencial = tiempoFinSecuencial - tiempoInicioSecuencial;
-               
-                JOptionPane.showMessageDialog(this, "Tiempo de ejecución (secuencial): " + tiempoTotalSecuencial + " ms");
-                
-                txtLogs.append("\nTiempo de ejecución (secuencial): " + tiempoTotalSecuencial + " ms\n");
+                cifradoHill.contarPalabrasSecuencial(txtLogs);
             } catch (IOException ex) {
                 Logger.getLogger(cifradorVisual.class.getName()).log(Level.SEVERE, null, ex);
             }
             
-        }else{
-            try {
-                long tiempoInicioConHilos = System.currentTimeMillis();
-
-                cifradoHill.cifrarConHilos();
-                long tiempoFinConHilos = System.currentTimeMillis();
-                long tiempoTotalConHilos = tiempoFinConHilos - tiempoInicioConHilos;
-                JOptionPane.showMessageDialog(this, "Tiempo de ejecución (concurrente): " + tiempoTotalConHilos + " ms");
-
-                txtLogs.append("\nTiempo de ejecución (concurrente): " + tiempoTotalConHilos + " ms\n");
-                
-                
-            } catch (IOException ex) {
-                Logger.getLogger(cifradorVisual.class.getName()).log(Level.SEVERE, null, ex);
+        } else{
+                try {
+                    cifradoHill.contarPalabrasConcurrente(txtLogs);
+                } catch (IOException ex) {
+                    Logger.getLogger(cifradorVisual.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
-            
-        }
-        
-        cifradoHill.nombreArchivo=resetRoute;
-        
-        }else{
-        JOptionPane.showMessageDialog(this, "Error: Ingrese un número entero válido.");
-
-        }
     }//GEN-LAST:event_btnIniciarActionPerformed
 
     
@@ -248,18 +219,15 @@ public class cifradorVisual extends javax.swing.JFrame {
         }
         else{
             jComboBox1.setEnabled(false);
-
         }
-
     }//GEN-LAST:event_chkConcurrenteActionPerformed
 
     private void btnServerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnServerActionPerformed
         String Ip=JOptionPane.showInputDialog(rootPane, "Escribe tu ip", "Servidor", HEIGHT);
         System.out.println(Ip);
-        service=server.connect(Ip, server);
+        service=server.connect(Ip, server, txtLogs);
         
-        txtLogs.append("Se ha conectado al servidor \n");
-        
+        txtLogs.append("\nSe ha conectado al servidor \n");
     }//GEN-LAST:event_btnServerActionPerformed
 
     private void btnClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientActionPerformed
@@ -267,48 +235,28 @@ public class cifradorVisual extends javax.swing.JFrame {
         client = new CifradoRMICliente();
 
         String Ip=JOptionPane.showInputDialog(rootPane, "Escribe la ip del servidor", "Cliente", HEIGHT);
-        client.connect(Ip, service);
+        client.connect(Ip, service, txtLogs);
        
-        txtLogs.append("Se ha conectado al servidor \n");
+        txtLogs.append("\nSe ha conectado al servidor \n");
         System.out.println(server.clientes.size());
     }//GEN-LAST:event_btnClientActionPerformed
 
     private void btnIniciarPorRMIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarPorRMIActionPerformed
         cifradoHill cifradoHill=new cifradoHill();
-        if(esNumeroEntero(txtCantidad.getText().toString())){
-            borrarCrearResultado();
-            
-            
-        String codigos=cmbCodigos.getSelectedItem().toString();
+        
         int cantidadHilos=Integer.parseInt(jComboBox1.getSelectedItem().toString());
         String textoCifrar=cmbEscogerTexto.getSelectedItem().toString();
-        
-        int cantidadCifrar=Integer.parseInt(txtCantidad.getText().toString());
-        
-        cifradoHill.key=codigos;
+       
         cifradoHill.numHilos=cantidadHilos;
-        cifradoHill.nombreArchivo=cifradoHill.nombreArchivo+textoCifrar+".txt";
-        cifradoHill.numCifrado=cantidadCifrar;
-        }
+        cifradoHill.nombreArchivo=cifradoHill.nombreArchivo+textoCifrar+"w.txt";
                 
         try {
-                long tiempoInicioConHilos = System.currentTimeMillis();
-                
-                cifradoHill.cifrarConHilosClientes(server);
-                
-                long tiempoFinConHilos = System.currentTimeMillis();
-                long tiempoTotalConHilos = tiempoFinConHilos - tiempoInicioConHilos;
-                JOptionPane.showMessageDialog(this, "Tiempo de ejecución (RMI): " + tiempoTotalConHilos + " ms");
-
-                txtLogs.append("\nTiempo de ejecución (RMI): " + tiempoTotalConHilos + " ms\n");
-                
-                
-            } catch (IOException ex) {
-                Logger.getLogger(cifradorVisual.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            cifradoHill.contarPalabrasParalelo(server, txtLogs);
+        } catch (IOException ex) {
+            Logger.getLogger(cifradorVisual.class.getName()).log(Level.SEVERE, null, ex);
+        }
             
-            cifradoHill.nombreArchivo=resetRoute;
-
+        cifradoHill.nombreArchivo=resetRoute;
     }//GEN-LAST:event_btnIniciarPorRMIActionPerformed
 
     /**
@@ -359,32 +307,6 @@ public class cifradorVisual extends javax.swing.JFrame {
     }
 }
     
-    private void borrarCrearResultado() {
-        
-        String nombreArchivo = "C:/Users/Xavi/Documents/NetBeansProjects/CifradorTexto/src/cifradortexto/test.txt";
-
-        File archivo = new File(nombreArchivo);
-
-        if (archivo.exists()) {
-            if (archivo.delete()) {
-                System.out.println("El archivo existente ha sido eliminado.");
-            } else {
-                System.out.println("No se pudo eliminar el archivo existente.");
-            }
-        }
-
-        try {
-            // Crear un nuevo archivo con el mismo nombre
-            if (archivo.createNewFile()) {
-                System.out.println("Se ha creado un nuevo archivo: " + nombreArchivo);
-            } else {
-                System.out.println("No se pudo crear el nuevo archivo.");
-            }
-        } catch (IOException e) {
-            System.out.println("Error al crear el archivo: " + e.getMessage());
-        }   
-}
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClient;
@@ -392,16 +314,12 @@ public class cifradorVisual extends javax.swing.JFrame {
     private javax.swing.JButton btnIniciarPorRMI;
     private javax.swing.JButton btnServer;
     private javax.swing.JCheckBox chkConcurrente;
-    private javax.swing.JComboBox<String> cmbCodigos;
     private javax.swing.JComboBox<String> cmbEscogerTexto;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField txtCantidad;
     private javax.swing.JTextArea txtLogs;
     // End of variables declaration//GEN-END:variables
 }

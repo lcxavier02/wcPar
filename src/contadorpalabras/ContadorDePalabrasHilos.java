@@ -18,8 +18,7 @@ public class ContadorDePalabrasHilos {
     public ContadorDePalabrasHilos() {
     }
 
-    public int contarPalabrasConcurrente(String nombreArchivo, int numHilos, List<String> palabrasArch)
-            throws IOException, InterruptedException {
+    public int contarPalabrasConcurrente(String nombreArchivo, int numHilos, List<String> palabrasArch) throws IOException, InterruptedException {
         int conteoTotal = 0;
 
         try (BufferedReader lector = new BufferedReader(new FileReader(nombreArchivo))) {
