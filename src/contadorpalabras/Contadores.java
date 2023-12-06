@@ -13,15 +13,12 @@ import java.util.logging.Logger;
 import javax.swing.JTextArea;
 
 public class Contadores {
-    String key = "hill";
-
     ArrayList<String> palabrasSec=new ArrayList<String>();
     ArrayList<String> palabrasCon=new ArrayList<String>();
     ContadorTexto cifrador = new ContadorTexto(palabrasSec, palabrasCon);
     ContadorDePalabras contadorPalabras=new ContadorDePalabras();
     String nombreArchivo = "C:/Users/xvelazquez/Documents/NetBeansProjects/wcPar/src/texts/";
     ContadorDePalabrasHilos contadorHilos=new ContadorDePalabrasHilos();
-    int numCifrado=10000;
     
     int numHilos = 8;
     
@@ -53,7 +50,10 @@ public class Contadores {
 
     @Override
     public void run() {
-        System.out.println("Running");
+        for (int i = startIndex; i < endIndex; i++) {
+            String[] palabras = texto[i].split("\\s+");
+            textosCifrados[i] = String.valueOf(palabras.length);
+        }
     }
 }
   

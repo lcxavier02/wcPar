@@ -24,7 +24,7 @@ public class ContadorRMIServidor extends UnicastRemoteObject implements Contador
 
     @Override
     public void contarPalabrasClientes(String[] nombreArchivo, JTextArea log) throws RemoteException {
-        System.out.println("Contar palabras por hilos");
+        //System.out.println("Contar palabras por hilos");
 
         int numClientes = clientes.size();
 
@@ -34,7 +34,7 @@ public class ContadorRMIServidor extends UnicastRemoteObject implements Contador
 
         System.out.println("Num clientes: " + numClientes);
         System.out.println("Palabras por cliente: " + palabrasPorCliente);
-        System.out.println("Palabras restantes: " + palabrasRestantes);
+        //System.out.println("Palabras restantes: " + palabrasRestantes);
 
         long tiempoInicioConHilos = System.currentTimeMillis();
         for (int i = 0; i < numClientes; i++) {
@@ -76,7 +76,7 @@ public class ContadorRMIServidor extends UnicastRemoteObject implements Contador
         // Imprimir el array de clientes
         System.out.println("Clientes registrados: " + Arrays.toString(clientes.keySet().toArray()));
 
-        System.out.println("Cliente registrado: " + cliente.toString() + " - ID: " + contadorClientes);
+        //System.out.println("Cliente registrado: " + cliente.toString() + " - ID: " + contadorClientes);
     }
         
     @Override
@@ -93,7 +93,7 @@ public class ContadorRMIServidor extends UnicastRemoteObject implements Contador
                 // Agrega los elementos del resultado del cliente a la lista
                 Collections.addAll(finalTextList, resultadoCliente);
                 // Procesa el resultado como desees
-                //System.out.println("Resultado del Cliente " + i + ": " + Arrays.toString(resultadoCliente));
+                System.out.println("Resultado del Cliente " + i + ": " + Arrays.toString(resultadoCliente));
             }
         }
     }
